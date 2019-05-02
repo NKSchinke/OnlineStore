@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Schema for the DB for Joe's Department Store -->
+
+<!-- Admin Collection -->
+<Admin>
+{
+    _id : 
+	Username : String
+	Password :
+}
+</Admin>
+
+<!-- Customers Collection -->
+<Customers>
+{
+	_id : 
+	First Name : String
+	Last Name : String
+	Age : int
+	Income : double
+	Occupation : String
+	Location : Address
+	PhoneNum : String
+	Gender : char
+	Married : boolean
+	Homeowner : boolean
+	<!-- Embedded document to keep track of type of pets owned by a specific customer -->
+	<Pets>
+	Pets : []
+	{
+		Type : String
+		Breed : String
+	}
+	</Pets>
+	Kids : []
+	{
+		Gender : char
+		Age : int
+	}
+	SearchProducts : [] Inventory
+	PurchasedProducts : [] Inventory
+	Cart : [] Inventory
+	Username : String
+	Password : 
+}
+</Customers>
+
+<!-- Inventory Collection -->
+<Inventory>
+{
+	SKU : int
+    Image : String (File Path to image)
+	Name : String
+	Category: String
+	Quantity : int
+	CustomerRating : int
+	Attributes : [] String
+}
+</Inventory>
